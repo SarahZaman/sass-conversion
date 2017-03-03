@@ -33,10 +33,11 @@ h1 {
 a {
 	color: $black;
 	text-decoration: none;
+    &:hover {
+        color: $mustard-yellow;
+    }
 }
-a:hover {
-	color: $mustard-yellow;
-}
+
 .box {
     width: 90%;
 	max-width: 80rem;
@@ -46,192 +47,215 @@ a:hover {
 
 
 /* -- FIRST DIV -- */
-.bg-white {
-	background-color: $white;
-}
-#company {
-	font-size: 3rem;
-}
-.first ul { 
-    margin: 0 0 1.5rem 0;
-	padding: 0;
-	border: 1px solid $medium-grey;
-}
-.first ul li a {
-	display: block;
-	border-bottom: 1px solid $regular-grey;
-	padding: 1rem;
-	background-color: $light-grey;
-}
-.first ul li a:hover {
-	background-color: $dark-grey;
-	border-bottom: 1px solid $dark-grey;
-	color: white;
-	text-shadow: 0 1px 1px $text-shadow;
-}
-.first ul li:nth-of-type(6) a {
-	border-bottom: none;
-}
-.first h1 {
-	font-family: $damian-font;
-    margin: 1.5rem 2rem 1.5rem 0;
+first {
+    .bg-white {
+	    background-color: $white;
+    }
+    
+    #company {
+	    font-size: 3rem;
+    }
+    
+    h1 {
+        font-family: $damian-font;
+        margin: 1.5rem 2rem 1.5rem 0; 
+    }
+    
+    ul {
+        margin: 0 0 1.5rem 0;
+	    padding: 0;
+	    border: 1px solid $medium-grey;
+        li {
+            &:nth-of-type(6) a {
+                border-bottom: none;
+            }
+            a {
+                display: block;
+	            border-bottom: 1px solid $regular-grey;
+	            padding: 1rem;
+	            background-color: $light-grey;
+                &:hover {
+                    background-color: $dark-grey;
+	                border-bottom: 1px solid $dark-grey;
+	                color: white;
+	                text-shadow: 0 1px 1px $text-shadow;
+                }
+            }
+        }
+    }
 }
 
 
 /* -- SECOND DIV -- */
-.bg-people {
+bg-people {
     background-image: url(../images/bg/creative-office.jpg);
     background-size: cover; /* bg image will always cover the assigned area regardless of screen-size */
     color: $white;
     padding: 2rem 0 3rem 0;
-}
-.bg-people a {
-    display: block;
-    color: $white;
-    text-decoration: none;
-    padding: 1rem 2rem;
-    margin: 0 0 1rem 0;
-    border: 1px solid $white;
-	background-color: $black;
-	transition: background-color 0.5s ease, border 0.5s ease;
-}
-.bg-people a:hover {
-    background-color: $bright-blue;
-	border: 1px solid $bright-blue;
-}
-.bg-people h1 span:first-of-type { /* accessing '+' in <h1> */
-    font-family: $impact-font;
-    vertical-align: middle;
-    font-size: 4rem;
-    color: $bright-yellow;
-}
-.bg-people h1 span:last-of-type {
-    font-style: italic;
-    text-transform: lowercase;
+    a {
+        display: block;
+        color: $white;
+        text-decoration: none;
+        padding: 1rem 2rem;
+        margin: 0 0 1rem 0;
+        border: 1px solid $white;
+	    background-color: $black;
+	    transition: background-color 0.5s ease, border 0.5s ease; 
+        &:hover {
+            background-color: $bright-blue;
+	        border: 1px solid $bright-blue;
+        }
+    }
+    h1 {
+        span {
+            &:first-of-type {
+                font-family: $impact-font;
+                vertical-align: middle;
+                font-size: 4rem;
+                color: $bright-yellow;
+            }
+            &:last-of-type {
+                font-style: italic;
+                text-transform: lowercase;
+            }
+        }
+    }
 }
 
 
 /* -- THIRD DIV -- */
-.bg-gold {
+bg-gold {
 	background-color: $bright-yellow;
 	padding: 2rem 0;
-}
-.bg-gold ul li {
-    width: 100%; 
-}
-.bg-gold li a {
-	display: block;
-	padding: 1rem;
-	background-color: $white;
-    text-decoration: none;
-	border-bottom: 1px solid $regular-grey;
-}
-.bg-gold li:last-child a {
-	border: none;
-}
-.bg-gold li a:hover { /* when <a> that belongs to .bg-gold is hovered, color the text of second <span> that belongs to <a> to darkgoldenrod */
-    color: $dark-grey;
-	background-color: $light-grey;
-}
-.bg-gold li span:last-child {
-    text-transform: uppercase;
-	margin: 0 0 0 1rem;
+    ul {
+        li {
+            width: 100%;
+            a {
+                display: block;
+                padding: 1rem;
+                background-color: $white;
+                text-decoration: none;
+                border-bottom: 1px solid $regular-grey; 
+                &:hover {
+                    color: $dark-grey;
+	                background-color: $light-grey;
+                }
+            }
+            &:last-child a {
+                border: none;
+            }
+            span {
+                &:last-child {
+                    text-transform: uppercase;
+	                margin: 0 0 0 1rem;    
+                }
+            }
+        }
+    }
 }
 
 
 /* -- FOURTH DIV -- */
-.second {
+second {
     padding: 2rem 0;
+    ul {
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li {
+            float: left;
+            width: 50%;
+            padding: 0 1rem 0 0;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+    h1 {
+        span {
+            &:first-of-type {
+                font-family: $impact-font;
+                vertical-align: middle;
+                font-size: 4rem;    
+            }
+            &:last-of-type {
+                font-style: italic;    
+            }
+        }
+    }
+    .names {
+        display: block;
+        text-align: center;
+        margin: 0.5rem 0 1rem 0;  
+    }
+    p {
+        padding: 0 1rem 0 0;
+        line-height: 1.5rem; 
+        &:last-child {
+            padding: 0;    
+        }
+    }
 }
-.second ul::after{ /* clear <li> floated left */
-    content: "";
-    display: block;
-    clear: both;
-}
-.second h1 span:first-of-type { /* accessing '+' in <h1> */
-    font-family: $impact-font;
-    vertical-align: middle;
-    font-size: 4rem;
-}
-.second h1 span:last-of-type {
-    font-style: italic;
-}
-.second ul li{
-    float: left;
-    width: 50%;
-    padding: 0 1rem 0 0;
-}
-.second ul li img{
-    width: 100%;
-    height: auto;
-}
-.second .names {
-	display: block;
-	text-align: center;
-	margin: 0.5rem 0 1rem 0;
-}
-.second p{
-    padding: 0 1rem 0 0;
-    line-height: 1.5rem;
-}
-.second p:last-child{
-    padding: 0;
-}
-
 
 /* -- FIFTH DIV -- */
-.bg-black {
+bg-black {
 	background-color: $bg-black;
     color: $white;
     padding: 2rem 0 3rem 0;
+    h1 {
+        text-transform: uppercase;
+        span {
+            &:first-of-type {
+                font-family: $impact-font;
+                vertical-align: middle;
+                font-size: 4rem;    
+            }
+            &:last-of-type {
+                font-style: italic;
+                text-transform: lowercase;    
+            }
+        }
+    }
+    .container {
+        padding: 0;
+	    margin: 0 0 1rem 0;
+        img {
+            width: 100%;
+            height: auto;    
+        }
+        ul {
+            margin: 0 0 1.2rem 0;
+            li {
+                margin: 0 0 0.8rem 0;    
+            }
+        }
+    }
 }
-.bg-black h1 {
-    text-transform: uppercase;
-}
-.bg-black h1 span:first-of-type { /* accessing '+' in <h1> */
-    font-family: $impact-font;
-    vertical-align: middle;
-    font-size: 4rem;
-}
-.bg-black h1 span:last-of-type {
-    font-style: italic;
-    text-transform: lowercase;
-}
-.bg-black .container {
-    padding: 0;
-	margin: 0 0 1rem 0;
-}
-.bg-black .container img {
-	width: 100%;
-    height: auto;
-}
-.bg-black .container ul {
-	margin: 0 0 1.2rem 0;
-}
-.bg-black .container ul li {
-	margin: 0 0 0.8rem 0;
-}
-.form-box {
+
+form-box {
     padding: 0.5rem 0;
-}
-.form-box input{
-    border: none;
-    width: 100%;
-    height: 2rem;
-    padding: 1.5rem;
-}
-.form-box input[type="submit"]{
-    border: none;
-    background-color: $bright-yellow;
-    color: $black;
-    font-size: 1rem;
-    font-weight: bold;
-    padding: 1.3rem 2.3rem 2.3rem 2.3rem;
-}
-.form-box textarea{
-    width: 100%;
-    padding: 1.5rem;
-    border: none;
+    input {
+        border: none;
+        width: 100%;
+        height: 2rem;
+        padding: 1.5rem;
+        [type="submit"] {
+            border: none;
+            background-color: $bright-yellow;
+            color: $black;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 1.3rem 2.3rem 2.3rem 2.3rem;    
+        }
+    }
+    textarea {
+        width: 100%;
+        padding: 1.5rem;
+        border: none;    
+    }
 }
 
 
